@@ -3,11 +3,10 @@ class Solution:
         g.sort()
         s.sort()
 
-        i = j = 0
+        child_content = 0
 
-        while i < len(g) and j < len(s):
-            if s[j] >= g[i]:
-                i += 1 
-            j += 1
-
-        return i
+        for cookie_size in s:
+            if child_content < len(g) and cookie_size >= g[child_content]:
+                child_content += 1
+        
+        return child_content
