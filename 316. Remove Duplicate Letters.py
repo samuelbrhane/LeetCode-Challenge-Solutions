@@ -1,6 +1,6 @@
 class Solution:
     def removeDuplicateLetters(self, s: str) -> str:
-        last_occurence = {char: i for i, char in enumerate(s)}
+        last_occurrence = {char: i for i, char in enumerate(s)}
         stack = []
         char_added = set()
 
@@ -8,7 +8,7 @@ class Solution:
             if char in char_added:
                 continue
 
-            while stack and stack[-1] > char and last_occurence[stack[-1]] > i:
+            while stack and stack[-1] > char and last_occurrence[stack[-1]] > i:
                 removed_char = stack.pop()
                 char_added.remove(removed_char)
 
